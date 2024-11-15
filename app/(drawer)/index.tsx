@@ -1,10 +1,7 @@
-import {SafeAreaView} from "react-native-safe-area-context"
-
 import {Tbl_BaganMapInfoData} from "@/data/BaganMap.json"
-
 import Map from "@/components/Map"
 import SearchByName from "@/components/SearchByName"
-import {Text, View} from "react-native"
+import {View} from "react-native"
 import {useCallback, useState} from "react"
 
 export default function Index() {

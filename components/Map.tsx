@@ -1,7 +1,8 @@
-import {View, Text, Image} from "react-native"
+import {View, Image} from "react-native"
 import MapView, {Marker, Polyline, PROVIDER_GOOGLE} from "react-native-maps"
 import {useRouter} from "expo-router"
 import {memo, useEffect, useRef} from "react"
+import Text from "./Text"
 const markerImg = require("@/assets/images/marker_02.png")
 interface Props {
     data: Info[]
@@ -10,7 +11,6 @@ interface Props {
 }
 const Map = memo(function ({selectedItem, data, showRoute}: Props) {
     const router = useRouter()
-    console.log("Map Rendered")
     const mapRef = useRef<MapView>(null)
     useEffect(() => {
         if (selectedItem) {
@@ -36,8 +36,6 @@ const Map = memo(function ({selectedItem, data, showRoute}: Props) {
             initialRegion={{
                 latitude: data[0].Latitude,
                 longitude: data[0].Longitude,
-                // latitude: 21.1691301113955,
-                // longitude: 94.8630055262538,
                 latitudeDelta: 0.01,
                 longitudeDelta: 0.01,
             }}
@@ -60,19 +58,14 @@ const Map = memo(function ({selectedItem, data, showRoute}: Props) {
                         })
                     }}
                 >
-                    <View className=" items-center">
-                        <View className=" flex-row">
-                            <View className="bg-blue-500 px-1 rounded">
-                                <Text className=" text-sm text-white ">
-                                    {index + 1}
-                                </Text>
-                            </View>
-                            <View>
-                                <Text>{item.PagodaMmName}</Text>
-                            </View>
-                        </View>
-                        <Image source={markerImg} className=" w-10 h-10" />
+                    <View className=" flex-row items-center justify-center gap-x-1">
+                        <Text className=" text-blue-500 font-bold">
+                            {`(${index + 1})`}
+                        </Text>
+
+                        <Text>{item.PagodaMmName}</Text>
                     </View>
+                    <Image source={markerImg} className=" w-10 h-10" />
                 </Marker>
             ))}
             {showRoute && (

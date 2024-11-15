@@ -1,6 +1,7 @@
-import {Text, ActivityIndicator, View} from "react-native"
+import {ActivityIndicator, View} from "react-native"
 import Map from "@/components/Map"
 import useSearchRoute from "@/hooks/useSearchRoute"
+import Text from "@/components/Text"
 
 export default function RouteOne() {
     const {data, isLoading} = useSearchRoute(0)

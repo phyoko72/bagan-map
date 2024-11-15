@@ -1,7 +1,8 @@
-import {View, Text, ScrollView, Pressable} from "react-native"
+import {View, ScrollView, Pressable} from "react-native"
 import {useLocalSearchParams, useRouter} from "expo-router"
 import {Tbl_BaganMapInfoDetailData as items} from "@/data/BaganMap.json"
 import {TabBarIcon} from "@/components/navigation/TabBarIcon"
+import Text from "@/components/Text"
 export default function Modal() {
     const {id, title} = useLocalSearchParams<{id: string; title: string}>()
     const router = useRouter()
@@ -17,7 +18,7 @@ export default function Modal() {
 
     return (
         <ScrollView className=" absolute bottom-0 w-full h-[80vh] bg-white rounded-lg">
-            <View className=" max-w-screen-lg mx-auto p-2">
+            <View className=" max-w-screen-lg mx-auto px-2 py-6">
                 <Pressable
                     className=" items-end mr-3 my-2"
                     onPress={() => router.back()}

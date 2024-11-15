@@ -1,7 +1,8 @@
-import {View, Text, FlatList, Pressable} from "react-native"
+import {View, FlatList, Pressable} from "react-native"
 import {Tbl_BaganMapInfoData as data} from "@/data/BaganMap.json"
 import {useCallback, useState} from "react"
 import RenderItem from "./RenderItem"
+import Text from "./Text"
 
 interface Props {
     selectedItem: Info | null
@@ -13,9 +14,8 @@ export default function SearchByName({selectedItem, onSelectItem}: Props) {
     const reset = useCallback(() => setIsSearching(false), [])
     const toggle = useCallback(() => {
         setIsSearching((prev) => !prev)
-        console.log("Toggle Pressed ")
     }, [])
-    console.log("SearchByName Rendered")
+
     return (
         <View className=" w-full max-w-screen-sm absolute top-[30px] ">
             <View className=" w-[80%] mx-auto">
