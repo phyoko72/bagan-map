@@ -1,8 +1,25 @@
-import {View, Text} from "react-native"
+import {Text, ActivityIndicator, View} from "react-native"
+import Map from "@/components/Map"
+import useSearchRoute from "@/hooks/useSearchRoute"
 export default function RouteTwo() {
+    const {data, isLoading} = useSearchRoute(1)
+
+    if (isLoading)
+        return (
+            <View className=" flex-1">
+                <ActivityIndicator size={"large"} color={"navy"} />
+            </View>
+        )
+
+    if (!data)
+        return (
+            <View className=" flex-1">
+                <Text>No data found!</Text>
+            </View>
+        )
     return (
-        <View>
-            <Text>RouteTwo</Text>
+        <View className=" flex-1 w-full">
+            <Map data={data} showRoute />
         </View>
     )
 }

@@ -7,34 +7,29 @@ export default function Layout() {
         <>
             <GestureHandlerRootView style={{flex: 1}}>
                 <Drawer
-                    screenOptions={{
-                        // headerBackgroundContainerStyle: {
-                        //     backgroundColor: "gold",
-                        //     paddingTop: 30,
-                        // },
-                        headerPressColor: "navy",
-                        headerTransparent: true,
-                    }}
+                // screenOptions={{
+                //     headerTransparent: true,
+                // }}
                 >
                     <Drawer.Screen
-                        name="index" // This is the name of the page and must match the url from root
+                        name="index"
                         options={{
                             drawerLabel: "Home",
-                            title: "Homes",
+                            title: "Home",
                         }}
                     />
                     <Drawer.Screen
-                        name="route-one" // This is the name of the page and must match the url from root
+                        name="route-one"
                         options={{
-                            drawerLabel: "Route One",
-                            title: "Route One",
+                            drawerLabel: "ခရီးစဉ်-၁",
+                            title: "ခရီးစဉ်-၁",
                         }}
                     />
                     <Drawer.Screen
-                        name="route-two" // This is the name of the page and must match the url from root
+                        name="route-two"
                         options={{
-                            drawerLabel: "Route Two",
-                            title: "Route Two",
+                            drawerLabel: "ခရီးစဉ်-၂",
+                            title: "ခရီးစဉ်-၂",
                         }}
                     />
                 </Drawer>
