@@ -51,7 +51,6 @@ const Map = memo(function ({selectedItem, data, showRoute}: Props) {
                         longitude: item.Longitude,
                     }}
                     onPress={() => {
-                        console.log(item.PagodaMmName)
                         router.navigate({
                             pathname: "/[id]",
                             params: {id: item.Id, title: item.PagodaMmName},

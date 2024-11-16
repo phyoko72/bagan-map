@@ -7,7 +7,7 @@ import {useCallback, useState} from "react"
 export default function Index() {
     const [selectedItem, setSelectedItem] = useState<Info | null>(null)
     const onSelectItem = useCallback((item: Info) => setSelectedItem(item), [])
-    console.log("Home rendered: ", selectedItem)
+
     return (
         <View className=" flex-1 w-full">
             <Map data={Tbl_BaganMapInfoData} selectedItem={selectedItem} />
