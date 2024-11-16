@@ -6,11 +6,7 @@ export default function Layout() {
     return (
         <>
             <GestureHandlerRootView style={{flex: 1}}>
-                <Drawer
-                // screenOptions={{
-                //     headerTransparent: true,
-                // }}
-                >
+                <Drawer>
                     <Drawer.Screen
                         name="index"
                         options={{

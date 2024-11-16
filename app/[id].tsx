@@ -7,7 +7,6 @@ export default function Modal() {
     const {id, title} = useLocalSearchParams<{id: string; title: string}>()
     const router = useRouter()
     const data = items.find((item) => item.Id === id)
-    console.log("Modal Rendered")
 
     if (!data)
         return (
@@ -18,7 +17,7 @@ export default function Modal() {
 
     return (
         <ScrollView className=" absolute bottom-0 w-full h-[80vh] bg-white rounded-lg">
-            <View className=" max-w-screen-lg mx-auto px-2 py-6">
+            <View className="p-4">
                 <Pressable
                     className=" items-end mr-3 my-2"
                     onPress={() => router.back()}
